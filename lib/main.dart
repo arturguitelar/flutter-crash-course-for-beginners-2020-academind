@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 
-// // main padrão
-// void main() {
-//   runApp(MyApp());
-// }
-// Se a função tem apenas uma expressão é possível usar
-// uma espécie de "Arrow Function" (Como no javascript).
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return MyAppState();
+  }
+}
+
+class MyAppState extends State<MyApp> {
+  var questionIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     var questions = [
@@ -22,10 +25,10 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(
           children: [
-            Text('A pergunta!'),
+            Text(questions[questionIndex]),
             RaisedButton(
               child: Text('Pergunta 1'),
-              onPressed: null,
+              onPressed: answerQuestion,
             ),
             RaisedButton(
               child: Text('Pergunta 2'),
@@ -39,5 +42,11 @@ class MyApp extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void answerQuestion() {
+    setState(() {
+      questionIndex += 1;
+    });
   }
 }

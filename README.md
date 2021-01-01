@@ -1,4 +1,4 @@
-# Estudos de de Flutter e Dart
+# Estudos de Flutter e Dart
 
 Nesse momento este projeto está seguindo o tutorial do canal Academind:
 

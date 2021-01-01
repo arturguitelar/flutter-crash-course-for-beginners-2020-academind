@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import './question.dart';
-import './answer.dart';
+import 'quiz.dart';
+import 'result.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,7 +15,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   var _questionIndex = 0;
 
-  final questions = const [
+  final _questions = const [
     {
       'question': 'Qual é a sua cor favorita?',
       'answers': ['Preto', 'Vermelho', 'Verde', 'Azul', 'Branco']
@@ -31,23 +31,17 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Um titulo para o App aqui'),
+          title: Center(child: Text('Um titulo para o App aqui')),
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: _questionIndex < questions.length
-              ? Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Question(questions[_questionIndex]['question']),
-                    ...(questions[_questionIndex]['answers'] as List<String>)
-                        .map((answer) => Answer(answer, _answerQuestion))
-                        .toList(),
-                  ],
+          child: _questionIndex < _questions.length
+              ? Quiz(
+                  questions: _questions,
+                  questionIndex: _questionIndex,
+                  answerQuestion: _answerQuestion,
                 )
-              : Center(
-                  child: Text('Você conseguiu! :D'),
-                ),
+              : Result(),
         ),
       ),
     );
@@ -57,7 +51,7 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _questionIndex += 1;
     });
-    if (_questionIndex < questions.length) {
+    if (_questionIndex < _questions.length) {
       print('we have more questions!');
     } else {
       print('No more questions!');

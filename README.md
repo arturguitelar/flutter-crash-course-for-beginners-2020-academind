@@ -1,7 +1,7 @@
-# Estudos de Flutter e Dart
+# Flutter e Dart - Crash course for beginers - Academind Tutorial
 
-Nesse momento este projeto está seguindo o tutorial do canal Academind:
+Este projeto foi criado como forma de estudo para entendimento dos conceitos básicos sobre Flutter e segue o tutorial do canal Academind:
 
 [Flutter Crash Course for Beginners 2020 - Build a Flutter App with Google's Flutter & Dart](https://www.youtube.com/watch?v=x0uinJvhNxI&ab_channel=Academind)
 
-Estou utilizando este repositório como estudo. Ainda não tenho certeza se terá apenas este projeto ou se será um mono-repo com vários projetinhos de estudo juntos. Decidirei isso futuramente.
+Existem algumas pequenas modificações em relação ao vídeo-tutorial, porém são estéticas. Os conteceitos-base e códigos de lógica de negócio aplicados são os mesmos.
